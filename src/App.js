@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 // TODO: Import About
 // TODO: Import Contact
 // TODO: Import React Router
@@ -12,14 +12,17 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
+    <Router>
     <div>
       <Navbar />
-      <Router>  </Router>
-      {/* TODO: Implement Routing Here */}
-      <Route path="/" exact component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/contact" component={Contact} />
+        <Routes>
+          {/* TODO: Implement Routing Here */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
     </div>
+    </Router>
   );
 }
 
